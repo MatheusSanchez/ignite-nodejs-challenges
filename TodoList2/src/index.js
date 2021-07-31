@@ -14,14 +14,21 @@ function checksExistsUserAccount(request, response, next) {
 
   const user = users.find((user) => user.username == username);
 
-  if (!user) {
-    return response.status(400).json({ error: "User Not Found" });
+  if (user) {
+    request.user = user;
   }
 
   next();
 }
 
 function checksCreateTodosUserAvailability(request, response, next) {
+  const { user } = request;
+
+  if (user.pro == true || user.todos.length < 10) {
+    next();
+  } else {
+    return response.status(401).json({ error: "This user can not create more todo's !" });
+  }
 
 }
 
