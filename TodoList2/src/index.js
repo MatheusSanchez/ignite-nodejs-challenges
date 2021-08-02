@@ -14,10 +14,10 @@ function checksExistsUserAccount(request, response, next) {
 
   const user = users.find((user) => user.username == username);
 
-  if (user) {
-    request.user = user;
+  if (!user) {
+    return response.status(404).json({ error: "User Not Founded !" });
   }
-
+  request.user = user;
   next();
 }
 
@@ -27,7 +27,7 @@ function checksCreateTodosUserAvailability(request, response, next) {
   if (user.pro == true || user.todos.length < 10) {
     next();
   } else {
-    return response.status(401).json({ error: "This user can not create more todo's !" });
+    return response.status(403).json({ error: "This user can not create more todo's !" });
   }
 
 }
@@ -36,18 +36,18 @@ function checksTodoExists(request, response, next) {
   const { username } = request.headers;
   const { id } = request.params;
   const user = users.find(user => user.username == username);
-  const todoFounded = user.todos.find((todo) => todo.id == id);
 
   if (!user) {
-    return response.status(401).json({ error: "User not founded !" });
+    return response.status(404).json({ error: "User not founded !" });
   }
 
-  if (uuidValidate(id) == false) {
-    return response.status(401).json({ error: "Invalid Id" });
+  if (validate(id) == false) {
+    return response.status(400).json({ error: "Invalid Id" });
   }
 
+  const todoFounded = user.todos.find((todo) => todo.id == id);
   if (!todoFounded) {
-    return response.status(400).json({ error: "Id Not Found" });
+    return response.status(404).json({ error: "Todo Id Not Found" });
   }
   request.user = user;
   request.todo = todoFounded;
@@ -55,7 +55,17 @@ function checksTodoExists(request, response, next) {
 }
 
 function findUserById(request, response, next) {
-  // Complete aqui
+  const { id } = request.params;
+  const foundedUser = users.find(user => user.id == id);
+
+  if (!foundedUser) {
+    return response.status(404).json({ error: "User with id: " + id + " not founded !" });
+  }
+
+  request.user = foundedUser;
+
+  next();
+
 }
 
 app.post('/users', (request, response) => {
