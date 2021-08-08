@@ -11,7 +11,7 @@ class CreateUserUseCase {
 
   execute({ email, name }: IRequest): User {
     const foundedUser:User = this.usersRepository.findByEmail(email);
-    if(!foundedUser){
+    if(foundedUser){
       throw new Error("User with" + foundedUser.email + " already exists !");
     }
     const newUser:User = this.usersRepository.create({email,name});
