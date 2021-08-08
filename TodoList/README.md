@@ -3,9 +3,8 @@
   <img alt="ignite-reactjs" src="https://user-images.githubusercontent.com/26420248/128563030-30aca57a-7040-4e84-bd11-31f2b38d059a.png"/> 
 </h1>
 
-# Desafio 01 - Conceitos do React
+# 💻 Sobre o desafio
 
-## 💻 Sobre o desafio
 Nesse desafio, você deverá criar uma aplicação para treinar o que aprendeu até agora no Node.js!
 
 Essa será uma aplicação para gerenciar tarefas (em inglês *todos*). Será permitida a criação de um usuário com `name` e `username`, bem como fazer o CRUD de *todos*:
@@ -30,7 +29,7 @@ O template está disponível na seguinte URL:
 
 Agora navegue até a pasta criada, abra no Visual Studio Code e por último abra o arquivo `index.js`. Lembre-se de executar o comando `yarn` no seu terminal para instalar todas as dependências e você terá o seguinte código:
 
-![image](https://user-images.githubusercontent.com/26420248/128563512-8f3f182c-1897-4adf-b764-7d4fbaa0778e.png)
+![image](https://user-images.githubusercontent.com/26420248/128618575-6b0e41bf-7717-4506-8785-590cd6f55479.png)
 
 ## Rotas da aplicação
 
@@ -146,7 +145,7 @@ Para completar todos os testes referentes à *todos* é necessário antes ter co
 
 **Observação:** O username deve ser enviado pelo header em uma propriedade chamada `username`:
 
-![image](https://user-images.githubusercontent.com/26420248/128563594-f3454ed9-a4f9-472e-ad7c-9178fab0dbea.png)
+![image](https://user-images.githubusercontent.com/26420248/128618586-49ea5ceb-444b-4006-a628-822772d8f0c4.png)
 
 - **Should be able to list all user's todos**
 
@@ -185,19 +184,17 @@ Para que esse teste passe, você não deve permitir a mudança da propriedade `d
 {
 	error: 'Mensagem do erro'
 }
-```
-
-- **Should be able to delete a todo**
-
-Para que esse teste passe, DELETE `/todos/:id` você deve permitir que um *todo* seja excluído usando o `id` passado na rota. O retorno deve ser apenas um status `204` que representa uma resposta sem conteúdo.
-
-- **Should not be able to delete a non existing todo**
-
-Para que esse teste passe, você não deve permitir excluir um *todo* que não exista e retornar uma resposta contendo um status `404` e um json no seguinte formato:
-
-```tsx
-{
-	error: 'Mensagem do erro'
-}
 
 ```
+
+# 📅 Entrega
+
+Esse desafio deve ser entregue a partir da plataforma da Rocketseat. Envie o link do repositório que você fez suas alterações. Após concluir o desafio, além de ter mandado o código para o GitHub, fazer um post no Linkedin é uma boa forma de demonstrar seus conhecimentos e esforços para evoluir na sua carreira para oportunidades futuras.
+
+Feito com 💜 por Rocketseat 👋 Participe da nossa [comunidade aberta!](https://discord.gg/pUU3CG4Z)
+
+# Solução do desafio
+
+Caso você queira ver como resolver o desafio, fizemos um vídeo explicando o passo a passo para cumprir com todos os requisitos da aplicação:
+
+[https://youtu.be/t3mnEa3OGgY](https://youtu.be/t3mnEa3OGgY)
