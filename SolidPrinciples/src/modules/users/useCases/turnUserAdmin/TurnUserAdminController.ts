@@ -7,7 +7,6 @@ class TurnUserAdminController {
 
   handle(request: Request, response: Response): Response {
     try{
-      console.log(request.params);
       const {user_id} = request.params;
       const newAdminUser = this.turnUserAdminUseCase.execute({user_id: user_id});
       return response.status(201).json(newAdminUser);
