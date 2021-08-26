@@ -9,7 +9,7 @@
 
 ### Chapter II
 
-- [ ] [Desafio 01 - Introdução ao SOLID](https://github.com/MatheusSanchez/ignite-nodejs-challenges/tree/main/SolidPrinciples)
+- [X] [Desafio 01 - Introdução ao SOLID](https://github.com/MatheusSanchez/ignite-nodejs-challenges/tree/main/chapter02-01-SolidPrinciples)
 
 - [ ] [Desafio 02 - Documentando com Swagger](https://github.com/MatheusSanchez)
 
