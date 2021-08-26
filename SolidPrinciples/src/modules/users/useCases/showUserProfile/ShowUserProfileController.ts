@@ -9,7 +9,6 @@ class ShowUserProfileController {
     
     try{
       const {user_id} = request.params;
-      console.log("this is our id" + user_id);
       const user = this.showUserProfileUseCase.execute({user_id: String(user_id)});
       return response.status(200).json(user);
 

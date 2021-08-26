@@ -36,7 +36,6 @@ class UsersRepository implements IUsersRepository {
   }
 
   turnAdmin(receivedUser: User): User {
-    console.log("Test this method")
     receivedUser.admin = true;
     return receivedUser;
   }
